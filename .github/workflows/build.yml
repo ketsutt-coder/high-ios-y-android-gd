@@ -29,7 +29,8 @@ jobs:
       - name: Build Mod
         uses: geode-sdk/build-geode-mod@main
         with:
-          # Esta línea es la que soluciona tu error de "find_package"
+          # Esto descarga las herramientas necesarias de Geode
           sdk: v2.0.0
+          build-config: Release
           platform: ${{ matrix.config.target }}
           combine: true
