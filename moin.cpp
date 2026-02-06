@@ -4,7 +4,6 @@
 
 using namespace geode::prelude;
 
-// Evita fallos si el juego busca texturas que no existen
 class $modify(MyFileUtils, CCFileUtils) {
     gd::string fullPathForFilename(const char* filename, bool resourceDirectory) {
         auto path = CCFileUtils::fullPathForFilename(filename, resourceDirectory);
@@ -21,13 +20,7 @@ class $modify(MyFileUtils, CCFileUtils) {
 };
 
 class $modify(MyGameManager, GameManager) {
-    // Habilita los botones de High Graphics siempre
-    bool canUseHighGraphics() { return true; }
-
-    void updateQuality(int quality) {
-        GameManager::updateQuality(quality);
-        auto conf = CCFileUtils::sharedFileUtils();
-        conf->purgeCachedEntries();
-        log::info("Calidad de texturas forzada a: {}", quality);
+    bool canUseHighGraphics() { 
+        return true; 
     }
 };
