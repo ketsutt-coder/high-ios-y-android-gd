@@ -29,6 +29,5 @@ jobs:
       - name: Build Mod
         uses: geode-sdk/build-geode-mod@main
         with:
-          # Usamos la versión de la CLI y SDK más recientes y estables
           combine: true
           target: ${{ matrix.config.target }}
