@@ -1,5 +1,10 @@
 name: Build Geode Mod
-on: [push, workflow_dispatch]
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   build:
@@ -18,9 +23,13 @@ jobs:
     runs-on: ${{ matrix.config.os }}
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Build Mod
         uses: geode-sdk/build-geode-mod@main
         with:
+          # Esta línea es la que soluciona tu error de "find_package"
+          sdk: v2.0.0
+          platform: ${{ matrix.config.target }}
           combine: true
