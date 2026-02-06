@@ -29,8 +29,7 @@ jobs:
       - name: Build Mod
         uses: geode-sdk/build-geode-mod@main
         with:
-          # Esto descarga las herramientas necesarias de Geode
           sdk: v2.0.0
-          build-config: Release
-          platform: ${{ matrix.config.target }}
+          # Aquí estaba el error: cambiamos 'platform' por 'target'
+          target: ${{ matrix.config.target }}
           combine: true
