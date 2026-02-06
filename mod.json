@@ -1,9 +1,10 @@
 {
-	"geode": "2.0.0-beta.1",
-	"id": "ketsutt.high_graphics_fix",
+	"geode": "2.0.0",
+	"id": "ketsutt.ultra_graphics",
 	"version": "v1.0.0",
 	"name": "High Graphics Fix",
 	"developer": "ketsutt-coder",
-	"description": "Habilita gráficos High/Ultra en Android e iOS sin errores.",
+	"description": "Enables High/Ultra graphics on Android and iOS.",
+	"repository": "https://github.com/ketsutt-coder/high-ios-y-android-gd",
 	"platforms": ["android", "ios"]
 }
