@@ -29,7 +29,6 @@ jobs:
       - name: Build Mod
         uses: geode-sdk/build-geode-mod@main
         with:
-          sdk: v2.0.0
-          # Aquí estaba el error: cambiamos 'platform' por 'target'
-          target: ${{ matrix.config.target }}
+          # Usamos la versión de la CLI y SDK más recientes y estables
           combine: true
+          target: ${{ matrix.config.target }}
